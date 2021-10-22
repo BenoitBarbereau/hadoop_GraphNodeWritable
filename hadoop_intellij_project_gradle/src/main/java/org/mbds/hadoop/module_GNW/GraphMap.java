@@ -1,30 +1,30 @@
-/*
-  M2 MBDS - Hadoop - 2021
-
-  --
-  TP1: exemple de programme Hadoop - detecteur d'anagrammes
-  --
-*/
 package org.mbds.hadoop.module_GNW;
 
-import java.io.IOException;
 
+import java.io.IOException;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.io.Writable;
 
-// Classe Driver (contient le main du programme Hadoop).
-public class GraphMap extends Mapper<Text, GraphNodeWritable, Text, GraphNodeWritable> {
-	private static final String GREY = "GRIS";
+public class GraphMap extends Mapper<Text, GraphNodeWritable, Text, GraphNodeWritable>
+{
+	private static final String GREY="GRIS";
 
-	protected void map(Text key, GraphNodeWritable node, Context context) throws IOException, InterruptedException {
-		if (node.Couleur.equals(GREY)) {
-			for (int i = 0; i < node.Voisin.length; ++i) {
-				if (node.Voisin[i].equals(""))
+	protected void map(Text key, GraphNodeWritable node, Context context) throws IOException, InterruptedException
+	{
+		if(node.color.equals(GREY))
+		{
+			for(int i=0; i<node.neighbors.length; ++i)
+			{
+				if(node.neighbors[i].equals(""))
 					continue;
-				context.write(new Text(node.Voisin[i]), new GraphNodeWritable ("|" + GREY + "|" + Integer.toString(node.Profondeur + 1)));
+				context.write(new Text(node.neighbors[i]), new GraphNodeWritable("|"+GREY+"|"+Integer.toString(node.depth+1)));
 			}
-			context.write(key, new GraphNodeWritable (String.join("," , node.Voisin) + "|NOIR|" + Integer.toString(node.Profondeur)));
-		} else
+			//node.color = "NOIR";
+			//context.write(key, node);
+			context.write(key, new GraphNodeWritable(String.join(",",node.neighbors)+"|NOIR|"+Integer.toString(node.depth+1)));
+		}
+		else
 			context.write(key, node);
 	}
 }
