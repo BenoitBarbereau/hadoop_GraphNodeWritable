@@ -29,7 +29,7 @@
 				https://winscp.net/eng/download.php
 
 
-**Download Hadoop with dependancies in VM**
+**Download Hadoop with dependencies in VM**
 				https://drive.google.com/drive/folders/1DGnh28SxJZ3aS-HIOKnd-ibfyJCdqmhP?usp=sharing
 
 
