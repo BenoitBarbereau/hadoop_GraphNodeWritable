@@ -71,7 +71,7 @@
 				HDFS and Yarn processes have been started.
 
 
-- run WinSCP in order to user hdfs system files with local hardware
+- run WinSCP in order to use hdfs system files with local hardware
 
 				localhost:2222
 				login: mbds
