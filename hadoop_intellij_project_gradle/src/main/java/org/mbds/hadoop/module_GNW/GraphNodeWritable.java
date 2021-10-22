@@ -35,35 +35,30 @@ public class GraphNodeWritable implements Writable
 
 	private void graphinput(String string) {
 		String[] parts = string.split("\\|");
-		if(parts.length!=3) // Invalid
-			return;
-		neighbors=parts[0].split(",");
-		color=parts[1];
-		depth=1;
+		//if (parts.length != 3) // Invalid
+		//	return;
+		neighbors = parts[0].split(",");
+		color = parts[1];
+		depth = 1;
 
-		try
-		{
+		try {
 			depth = Integer.parseInt(parts[2]);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
+			System.out.println("exception depth" + e.getMessage());
 			depth = -1;
 		}
 	}
 
-	public String get_serialized()
-	{
+	public String get_serialized() {
 		return String.join(",", neighbors) + "|" + this.color + "|" + this.depth;
 	}
 
-	public void write(DataOutput out) throws IOException
-	{
-		out.writeChars(get_serialized());
+	public void write(DataOutput out) throws IOException {
+		out.write(get_serialized().getBytes());
 	}
 
-	public void readFields(DataInput in) throws IOException
-	{
-		String line= in.readLine();
+	public void readFields(DataInput in) throws IOException {
+		String line = in.readLine();
 		graphinput(line);
 	}
 }

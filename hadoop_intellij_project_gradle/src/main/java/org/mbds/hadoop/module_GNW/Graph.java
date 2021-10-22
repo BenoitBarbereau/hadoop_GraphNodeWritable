@@ -39,7 +39,7 @@ public class Graph {
 		{
 			if(nb_step>0)
 			{
-				input_path=output_path+"/part-r*";
+				input_path=output_path+"/RESULTATS-r*" ;
 				if(nb_nodes_non_black==0)
 				{
 					System.out.println("All nodes seen; final output directory: "+output_path);
