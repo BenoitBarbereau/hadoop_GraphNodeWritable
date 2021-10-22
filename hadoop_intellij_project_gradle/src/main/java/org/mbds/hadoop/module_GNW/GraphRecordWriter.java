@@ -30,7 +30,7 @@ public class GraphRecordWriter extends RecordWriter<Text, GraphNodeWritable> {
 
 	// Appelée pour chaque tuple. Écrit le tuple sur le flux de sortie (out).
 	public void write(Text k, GraphNodeWritable val) throws IOException, InterruptedException {
-		out.writeBytes(k.toString()+";"+val.get_serialized()+"\n");
+		out.writeBytes(k.toString()+"\t"+val.get_serialized()+"\n");
 	}
 
 	// Appelée à la fin; permet de fermer le flux de sortie HDFS.

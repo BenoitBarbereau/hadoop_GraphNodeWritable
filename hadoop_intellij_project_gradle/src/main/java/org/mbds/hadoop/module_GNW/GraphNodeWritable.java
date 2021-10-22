@@ -28,9 +28,12 @@ import java.io.IOException;
 
 public class GraphNodeWritable implements Writable {
 	
-	public String[] Voisin = null;
+	public String[] Voisin = new String[0];
 	public String Couleur = "" ;
 	public int Profondeur = 0;
+
+	public GraphNodeWritable() {
+	}
 
 	public GraphNodeWritable(String string) {
 		graphInput(string);
@@ -38,17 +41,17 @@ public class GraphNodeWritable implements Writable {
 
 	public void graphInput(String string) {
 		// TODO Auto-generated constructor stub
-				String[] parts = string.split("\\|");
-				if (Voisin.length != 3) // Invalide.
-					return;
-				Voisin = parts[0].split(",");
-				Couleur = parts[1];
-				Profondeur = -1;
-				try {
-					Profondeur = Integer.parseInt(parts[2]);
-				} catch (Exception e) {
-					Profondeur = -1;
-				}
+		String[] parts = string.split("\\|");
+		if (Voisin.length != 3) // Invalide.
+			return ;
+		Voisin = parts[0].split(",");
+		Couleur = parts[1];
+		Profondeur = -1;
+		try {
+			Profondeur = Integer.parseInt(parts[2]);
+		} catch (Exception e) {
+			Profondeur = -1;
+		}
 	}
 
 	public void write(DataOutput out) throws IOException {

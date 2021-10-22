@@ -70,7 +70,7 @@ public class GraphRecordReader extends RecordReader<Text, GraphNodeWritable> {
 		// Logique de lecture / interprétation (split clef / valeur sur ';').
 		Text line=lineRecordReader.getCurrentValue();
 		String str=line.toString();
-		String[] arr=str.split(";");
+		String[] arr=str.split("\t");
 		key=new Text(arr[0]);
 		value=new GraphNodeWritable(arr[1]);
 		return true;
