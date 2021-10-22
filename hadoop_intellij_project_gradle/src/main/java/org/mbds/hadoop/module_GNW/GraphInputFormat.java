@@ -6,7 +6,7 @@
   --
   GraphInputFormat.java: InputFormat hadoop custo (utilise GraphRecordReader pour lire les GraphNodeWritable à partir du format textuel).
 */
-package mbds;
+package org.mbds.hadoop.module_GNW;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.InputSplit;

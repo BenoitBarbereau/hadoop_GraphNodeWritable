@@ -6,7 +6,7 @@
   --
   GraphOutputFormat.java: OutputFormat hadoop custo (utilise GraphRecordWriter pour écrire les GraphNodeWritable).
 */
-package mbds;
+package org.mbds.hadoop.module_GNW;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.InputSplit;

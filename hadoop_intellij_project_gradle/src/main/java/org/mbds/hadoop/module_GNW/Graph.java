@@ -5,7 +5,7 @@
   TP1: exemple de programme Hadoop - detecteur d'anagrammes
   --
 */
-package mbds;
+package org.mbds.hadoop.module_GNW;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
