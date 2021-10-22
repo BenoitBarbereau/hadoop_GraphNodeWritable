@@ -87,13 +87,38 @@
 
 -> Give right to load files on hdfs
 
+
 				hdfs dfsadmin -safemode leave
 
 
 -> load graph_input on hdfs
 
+
 				hadoop fs -put graph_input.txt
 
--> Execute tp-1.0.0.jar (compiled java files) with hadoop, Class Graph on package (org.mbds.hadoop.tp2) input = /graph_input.txt output= /Gresults
+if errors input while running the script:
+
+				hadoop fs -rm /graph_input.txt
+				hadoop fs -put graph_input.txt # again!!
+
+
+
+-> Execute tp-1.0.0.jar (compiled java files) with hadoop, Class Graph on package (org.mbds.hadoop.module_GNW.Graph) input = /graph_input.txt output= /res
+
 
 				hadoop jar /home/mbds/GraphWritableNode/tp-1.0.0.jar org.mbds.hadoop.module_GNW.Graph /graph_input.txt /res
+
+
+**Result**
+
+Type hadoop fs -cat /res8-step-1/* look at the result
+
+
+				mbds@hadoopvm:~$ hadoop fs -cat /res8-step-1/*
+				2021-10-22 13:38:04,041 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+				1       2,5|NOIR|-1
+				2       3,4|BLANC|-1
+				3       |BLANC|-1
+				4       |BLANC|-1
+				5       |BLANC|-1
+				6       |BLANC|-1
