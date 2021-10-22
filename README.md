@@ -5,32 +5,32 @@
 ## INSTALL
 
 
-** Download the repo **
-git clone https://github.com/BenoitBarbereau/hadoop_GraphNodeWritable.git
+**Download the repo**
+				git clone https://github.com/BenoitBarbereau/hadoop_GraphNodeWritable.git
 
 
-** Download IDE **
-https://www.jetbrains.com/fr-fr/idea/download/download-thanks.html?platform=windows&code=IIC
+**Download IDE**
+				https://www.jetbrains.com/fr-fr/idea/download/download-thanks.html?platform=windows&code=IIC
 
 
-** Download VirtualBox **
-https://www.virtualbox.org/
+**Download VirtualBox**
+				https://www.virtualbox.org/
 
 
-** Download Hadoop **
-https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz
+**Download Hadoop**
+				https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz
 
 
-** Download Putty **
-https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+**Download Putty**
+				https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 
-** Download WinSCP **
-https://winscp.net/eng/download.php
+**Download WinSCP**
+				https://winscp.net/eng/download.php
 
 
-** Download Hadoop with dependancies in VM **
-https://drive.google.com/drive/folders/1DGnh28SxJZ3aS-HIOKnd-ibfyJCdqmhP?usp=sharing
+**Download Hadoop with dependancies in VM**
+				https://drive.google.com/drive/folders/1DGnh28SxJZ3aS-HIOKnd-ibfyJCdqmhP?usp=sharing
 
 
 ## USAGE
@@ -82,18 +82,18 @@ https://drive.google.com/drive/folders/1DGnh28SxJZ3aS-HIOKnd-ibfyJCdqmhP?usp=sha
 ### Step 2 
 
 
-On Hadoop Deamon console
+**On Hadoop Deamon console**
 
 
 -> Give right to load files on hdfs
 
-hdfs dfsadmin -safemode leave
+				hdfs dfsadmin -safemode leave
 
 
 -> load graph_input on hdfs
 
-hadoop fs -put graph_input.txt
+				hadoop fs -put graph_input.txt
 
 -> Execute tp-1.0.0.jar (compiled java files) with hadoop, Class Graph on package (org.mbds.hadoop.tp2) input = /graph_input.txt output= /Gresults
 
-hadoop jar /home/mbds/GraphWritableNode/tp-1.0.0.jar org.mbds.hadoop.module_GNW.Graph /graph_input.txt /res
+				hadoop jar /home/mbds/GraphWritableNode/tp-1.0.0.jar org.mbds.hadoop.module_GNW.Graph /graph_input.txt /res
