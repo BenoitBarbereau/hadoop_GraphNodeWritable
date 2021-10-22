@@ -81,3 +81,19 @@ https://drive.google.com/drive/folders/1DGnh28SxJZ3aS-HIOKnd-ibfyJCdqmhP?usp=sha
 
 ### Step 2 
 
+
+On Hadoop Deamon console
+
+
+-> Give right to load files on hdfs
+
+hdfs dfsadmin -safemode leave
+
+
+-> load graph_input on hdfs
+
+hadoop fs -put graph_input.txt
+
+-> Execute tp-1.0.0.jar (compiled java files) with hadoop, Class Graph on package (org.mbds.hadoop.tp2) input = /graph_input.txt output= /Gresults
+
+hadoop jar /home/mbds/GraphWritableNode/tp-1.0.0.jar org.mbds.hadoop.module_GNW.Graph /graph_input.txt /res
