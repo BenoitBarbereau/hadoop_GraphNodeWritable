@@ -111,14 +111,30 @@ if errors input while running the script:
 
 **Result**
 
-Type hadoop fs -cat /res8-step-1/* look at the result
+Type  [ hadoop fs -cat /res-step-3/* ] look at the result after 3 iterations,
 
 
-				mbds@hadoopvm:~$ hadoop fs -cat /res8-step-1/*
-				2021-10-22 13:38:04,041 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
-				1       2,5|NOIR|-1
-				2       3,4|BLANC|-1
-				3       |BLANC|-1
-				4       |BLANC|-1
-				5       |BLANC|-1
-				6       |BLANC|-1
+
+				mbds@hadoopvm:~$ hadoop fs -cat /res-step-3/*
+				2021-10-22 15:39:59,207 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+				1       2,5|NOIR|0
+				2       3,4|NOIR|1
+				3       6|NOIR|2
+				4       |NOIR|2
+				5       6|NOIR|1
+				6       |NOIR|3
+
+
+## ARBORESCENCE
+
+#### Java files
+
+
+**.java**
+
+GraphNodeWritable\hadoop_intellij_project_gradle\src\main\java\org\mbds\hadoop\module_GNW
+
+
+**.jar**
+
+GraphNodeWritable\hadoop_intellij_project_gradle\build\libs
